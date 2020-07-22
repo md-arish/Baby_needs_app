@@ -1,0 +1,15 @@
+
+
+
+{% extends "layout.html" %}
+{% block body %}
+<h2 style="text-align:center;">Updating {{ name }}</h2>
+<div style="text-align:center;">
+    <button style="margin-bottom:10px; width:200px; text-align:left "><a href={{ '/update_quantity?data=' + name }}>Update Quantity</a></button><br>
+    <button style="margin-bottom:10px; width:200px; text-align:left "><a href={{ '/update_colour?data=' + name }}>Update colour</a></button><br>
+    <button style="margin-bottom:10px; width:200px; text-align:left "><a href={{ '/update_brand?data=' + name }}>Update Brand</a></button><br>
+    <button style="margin-bottom:10px; width:200px; text-align:left "><a href={{ '/update_price?data=' + name }}>Update Price</a></button><br>
+    <button style="margin-bottom:10px; width:200px; text-align:left "><a href={{ '/update_status?data=' + name }}">Update Status</a></button><br>      
+</div>
+
+{% endblock %}

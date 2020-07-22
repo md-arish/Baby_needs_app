@@ -1,0 +1,25 @@
+
+
+{% extends "layout.html" %}
+{% block body %}
+<br><br><h2 style="text-align:center;">Status of Items</h2><br>
+<div style="text-align:center">
+    <table border=1, style="width:50%" align="center">
+        <tr>
+             <th>Name of Item</th>
+             <th>Status</th>
+        </tr>
+        <tr>
+            <td>{{ item.name }}</td>
+            <td>{{ item.status }}</td>
+        </tr>
+    </table>
+</div>
+<br><br><br>
+<form action="/">
+    <div style="text-align:center">
+        <input type="submit" value="Home">
+    </div>
+</form> 
+
+{% endblock %}

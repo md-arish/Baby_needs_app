@@ -1,0 +1,42 @@
+
+{% extends "layout.html" %}
+{% block body %}
+
+<br><h2 style="text-align:center">Details of the Selected Item</h2><br><br>
+<div style="text-align:center">
+    <form method="POST" action="/update"> 
+        <label for="name">Name of the Item:</label>
+        <input type="text" name="name" style="margin-bottom:10px; width:200px; text-align:left" value={{ item.name }} readonly>
+        <br>
+        <label for="quantity">Quantity of the Item:</label>
+        <input type="number" name="quantity" style="margin-bottom:10px; width:200px; text-align:left" value={{ item.qty }} min=1 required>
+        <br>
+        <label for="brand">Name of the Brand: </label>
+        <input type="text" name="brand" style="margin-bottom:10px; width:200px; text-align:left" value={{ item.brand }} required>
+        <br>
+        <label for="colour">Colour of the Item:  </label>
+        <input type="text" name="colour" style="margin-bottom:10px; width:200px; text-align:left" value={{ item.colour }} >
+        <br>
+        <label for="price">Price of the Item:</label>
+        <input type="number" name="price" style="margin-bottom:10px; width:200px; text-align:left" value={{ item.price }} min=1 required>
+        <br>
+        <label for="status">Status of the Item:</label>
+        {% if item.status=="Bought" %}
+        <input type="radio" id="purchased" name="status" value="Bought" checked="checked">
+        <label for="male">Purchased</label>
+        <input type="radio" id="not purchased" name="status" value="Not Bought">
+        <label for="female">Not Purchasde</label><br>
+        {% else %}
+        <input type="radio" id="purchased" name="status" value="Bought">
+        <label for="male">Purchased</label>
+        <input type="radio" id="not purchased" name="status" value="Not Bought" checked="checked">
+        <label for="female">Not Purchasde</label><br>
+        {% endif %}<br>
+        <input type="submit" value="Update">  
+        <button style="margin-left:10px"><a href={{ '/delete?data=' + item.name }}>Delete</a></button>
+    </form><br><br>
+    <form action="/">
+        <input type="submit" value="Home">
+    </form>
+</div>
+{% endblock %}

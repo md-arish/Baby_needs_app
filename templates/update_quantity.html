@@ -1,0 +1,14 @@
+
+
+{% extends "layout.html" %}
+{% block body %}
+<form method="POST" action="/insert_data">
+    <div style="text-align:center">
+        <label for="quantity">Quantity of the {{ name }}:</label>
+        <input type="number" name="quantity" style="margin-bottom:10px; width:200px; text-align:left" min=1 required>
+        <br>
+        <input type="submit" value="Update"> 
+
+    </div>
+</form>
+{% endblock %}

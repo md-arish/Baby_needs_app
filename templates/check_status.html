@@ -1,0 +1,20 @@
+
+
+{% extends "layout.html" %}
+{% block body %}
+<br><br><h2 style="text-align:center;">Status of an Item</h2><br>
+<<form method="POST" action="/check_status_name">
+    <div style="text-align:center;>
+        <label for="name">Name of the Item:</label>
+        <input type="text" name="name" style="margin-bottom:10px; width:200px; text-align:left" required>
+        <br>
+        <input type="submit" value="Check Status">      
+    </div>
+</form>
+<br><br>
+<form action="/">
+<div style="text-align:center;">
+    <input type="submit" value="Home">
+</div>
+</form> 
+{% endblock %}

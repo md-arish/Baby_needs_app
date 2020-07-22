@@ -1,0 +1,30 @@
+
+
+{% extends "layout.html" %}
+{% block body %}
+<br><br><h2 style="text-align:center;">Inserting an Item to the list</h2><br><br>
+<form method="POST" action="/insert_data">
+   <div style="text-align:center;">
+        <label for="name">Name of the Item:</label>
+        <input type="text" name="name" style="margin-bottom:10px; width:200px; text-align:left" required>
+        <br>
+        <label for="quantity">Quantity of the Item:</label>
+        <input type="number" name="quantity" style="margin-bottom:10px; width:200px; text-align:left" min=1 required>
+        <br>
+        <label for="brand">Name of the Brand: </label>
+        <input type="text" name="brand" style="margin-bottom:10px; width:200px; text-align:left" required>
+        <br>
+        <label for="colour">Colour of the Item:  </label>
+        <input type="text" name="colour" style="margin-bottom:10px; width:200px; text-align:left" >
+        <br>
+        <label for="price">Price of the Item:</label>
+        <input type="number" name="price" style="margin-bottom:10px; width:200px; text-align:left" min=1 required>
+        <br><br>
+        <input type="submit" value="Insert">     
+    </div>
+</form>
+<br><br>
+<div style="text-align:center;">
+    <button><a href="/">Home</a><button>
+</div>
+{% endblock %}

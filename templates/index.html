@@ -1,0 +1,33 @@
+
+
+{% extends "layout.html" %}
+{% block body %}
+<br><h2 style="text-align:center;">Welcome to Baby's Need Application</h2><br><br>
+<h2 style="text-align:center;">All Items</h2>
+
+
+<div style="text-align:center">
+            <table border=1 style="width:50%" align="center">
+                <tr>
+                    <th>Name of Item</th>
+                </tr>
+                {% for value in names %}
+                {% for name in value %}
+                {% set url = '/select_data?data=' + name %}
+                <tr><td><div style="text-align:center"><button title="Click to see Details"><a href='{{url}}'>{{name}}</a></button></div></td></tr>
+                {% endfor %}
+                {% endfor %}
+            </table>
+</div>
+<br><br>            
+<div style="text-align:center">            
+    <form>
+        <button style="margin-bottom:10px; width:200px; text-align:left "><a href="/insert">Insert an Item</a></button><br>
+        <button style="margin-bottom:10px; width:200px; text-align:left "><a href="/display_bought">Display Items Bought</a></button><br>
+        <button style="margin-bottom:10px; width:200px; text-align:left "><a href="/display_unbought">Display Items To Be Bought</a></button><br>
+        <button style="margin-bottom:10px; width:200px; text-align:left "><a href="/check_status">Check the Status of an Item</a></button><br>
+        <button style="margin-bottom:10px; width:200px; text-align:left "><a href="/delete_all">Delete All Items</a></button><br>
+    </form>  
+</div> 
+{% endblock %}
+

@@ -1,0 +1,30 @@
+
+{% extends "layout.html" %}
+{% block body %}
+<br><br><h2 style="text-align:center;">Items Bought</h2><br>
+<form>
+    <div style="text-align:center">
+        <table border=1, style="width:100%">
+            <tr>
+                <th>Name of Item</th>
+                <th>Quantity</th>
+                <th>Brand</th>
+                <th>Colour</th>
+                <th>price</th>
+                <th>status</th>
+            </tr>
+            {% for item in item_list %}
+            <tr>{% for val in item %}
+            <td>{{val}}</td>
+            {% endfor %}</tr>
+            {% endfor %}
+        </table>
+    </div>
+</form>
+<br><br>
+<form action="/">
+<div style="text-align:center;">
+    <input type="submit" value="Home">
+</div>
+</form>
+{% endblock %}
